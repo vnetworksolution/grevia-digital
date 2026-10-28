@@ -1,0 +1,68 @@
+---
+const marqueeItems = [
+  "Website Designing",
+  "Digital Marketing",
+  "Search Engine Optimization",
+  "Google Business Optimization",
+  "AI Automation Agent",
+  "Facebook Meta Ads",
+  "Google PPC Ads",
+  "YouTube Video Ads",
+  "WhatsApp Marketing",
+  "Email Marketing"
+];
+---
+
+<div class="relative w-full overflow-hidden bg-gradient-to-r from-[#07241E] via-[#0A3E31] to-[#07241E] border-y border-amber-400/30 py-3.5 shadow-md select-none z-20">
+  
+  <!-- Subtle Ambient Glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(234,179,8,0.08),transparent_70%)] pointer-events-none"></div>
+
+  <!-- Marquee Track Wrapper -->
+  <div class="marquee-wrapper flex w-max items-center">
+    <!-- First Loop Group -->
+    <div class="marquee-track flex items-center shrink-0">
+      {marqueeItems.map((item) => (
+        <div class="flex items-center gap-4 sm:gap-6 px-4 sm:px-6">
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-white/95 whitespace-nowrap flex items-center gap-2">
+            {item}
+          </span>
+          <span class="text-[#EAB308] text-xs sm:text-sm font-black drop-shadow-xs">✦</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Duplicate Group for Seamless Infinite Loop -->
+    <div class="marquee-track flex items-center shrink-0" aria-hidden="true">
+      {marqueeItems.map((item) => (
+        <div class="flex items-center gap-4 sm:gap-6 px-4 sm:px-6">
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-white/95 whitespace-nowrap flex items-center gap-2">
+            {item}
+          </span>
+          <span class="text-[#EAB308] text-xs sm:text-sm font-black drop-shadow-xs">✦</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes marqueeScroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-wrapper {
+    display: flex;
+    width: max-content;
+    animation: marqueeScroll 35s linear infinite;
+  }
+
+  .marquee-wrapper:hover {
+    animation-play-state: paused;
+  }
+</style>

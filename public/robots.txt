@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*.php$
+
+Sitemap: https://greviadigital.com/sitemap.xml
+Host: https://greviadigital.com

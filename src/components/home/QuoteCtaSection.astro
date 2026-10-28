@@ -1,0 +1,54 @@
+---
+import siteConfig from '../../data/site.json';
+---
+
+<section class="py-20 bg-gradient-to-br from-gray-900 via-[#0A3E31] to-[#0F5A47] text-white relative overflow-hidden">
+  
+  <!-- Radial Background Grid Overlay (Matching Homepage Hero Design) -->
+  <div class="absolute inset-0 bg-[radial-gradient(#16A34A_1px,transparent_1px)] [background-size:20px_20px] opacity-15 pointer-events-none"></div>
+
+  <!-- Pulsing Ambient Glowing Theme Orbs (Matching Hero & Connected System Blocks) -->
+  <div class="absolute -top-24 -right-24 w-80 h-80 bg-[#EAB308]/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+  <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-[#16A34A]/25 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-semibold uppercase tracking-wider border border-emerald-500/30 shadow-[0_0_15px_rgba(22,163,74,0.15)]">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+      </span>
+      <span>Ready For Growth?</span>
+    </div>
+
+    <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+      Your Next Customer May <br class="hidden sm:inline" />
+      <span class="text-[#EAB308]">Already Be Searching.</span>
+    </h2>
+
+    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+      Don't let potential business go to your competitors. Let Grevia Digital build a high-performance website, strengthen your search visibility, and connect you with active buyers.
+    </p>
+
+    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center px-7 py-4 rounded-xl text-sm sm:text-base font-semibold text-gray-900 bg-[#EAB308] hover:bg-yellow-400 transition-all duration-200 shadow-xl hover:shadow-yellow-500/20 active:scale-95 text-center w-full sm:w-auto"
+      >
+        <span>Get a Free Quote</span>
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+
+      <a
+        href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`}
+        class="inline-flex items-center justify-center px-7 py-4 rounded-xl text-sm sm:text-base font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-200 shadow-md backdrop-blur-md text-center w-full sm:w-auto"
+      >
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-[#EAB308]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+        </svg>
+        <span>Call {siteConfig.contact.phone}</span>
+      </a>
+    </div>
+  </div>
+</section>

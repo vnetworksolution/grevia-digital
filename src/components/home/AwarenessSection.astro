@@ -1,0 +1,121 @@
+---
+const steps = [
+  {
+    step: "01",
+    phase: "FOUNDATION",
+    headline: "Create a Strong Digital Foundation",
+    description: "Build a modern, lightning-fast business website with clean code, mobile optimization, and conversion-focused page hierarchy.",
+    outcome: "High Speed & Clean UX"
+  },
+  {
+    step: "02",
+    phase: "VISIBILITY",
+    headline: "Dominate Search Visibility",
+    description: "Deploy strategic On-Page SEO, Technical SEO, and Google Business Profile optimization so active searchers find you first.",
+    outcome: "Top Google Rankings"
+  },
+  {
+    step: "03",
+    phase: "TRAFFIC",
+    headline: "Reach Your Target Audience",
+    description: "Launch targeted Meta (Facebook/Instagram) and Google ad campaigns designed to put your message in front of active buyers.",
+    outcome: "Targeted Buyer Reach"
+  },
+  {
+    step: "04",
+    phase: "CREDIBILITY",
+    headline: "Establish Brand Credibility",
+    description: "Present high-quality service explanations, clear business information, customer reviews, and clear value propositions.",
+    outcome: "Strong Customer Trust"
+  },
+  {
+    step: "05",
+    phase: "CONVERSION",
+    headline: "Turn Visitors Into Enquiries",
+    description: "Guide prospective clients through frictionless contact forms, direct call buttons, and clear action prompts that yield leads.",
+    outcome: "Consistent Lead Flow"
+  },
+  {
+    step: "06",
+    phase: "SCALING",
+    headline: "Measure, Refine & Scale Up",
+    description: "Track performance analytics, continuously refine keywords and ad targeting, and systematically scale your business reach.",
+    outcome: "Predictable Growth"
+  }
+];
+---
+
+<section id="growth-framework" class="py-24 bg-white relative overflow-hidden border-b border-gray-100">
+  
+  <div class="container-1440 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-20">
+      <div class="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#0F5A47]/10 text-[#0F5A47] text-xs sm:text-sm font-semibold tracking-wide border border-[#0F5A47]/20">
+        <span>Strategic Framework</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
+        How Digital Growth <span class="text-[#0F5A47]">Actually Works</span>
+      </h2>
+      <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
+        Sustainable online success is never an accident. It requires a connected 6-step journey that moves prospective buyers from discovery to decision.
+      </p>
+    </div>
+
+    <!-- 6 Flowing Steps Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-14 relative z-10">
+      {steps.map((item) => (
+        <div class="relative space-y-4 group cursor-default">
+          
+          <!-- Step Header Row (Number Circle + Category Tag) -->
+          <div class="flex items-center gap-4">
+            <!-- Number Circle Node -->
+            <div class="w-14 h-14 rounded-2xl bg-[#0F5A47] text-white font-bold text-xl flex items-center justify-center shrink-0 shadow-md group-hover:bg-[#EAB308] group-hover:text-gray-900 group-hover:scale-105 transition-all duration-300">
+              {item.step}
+            </div>
+
+            <!-- Category Tag Pill -->
+            <span class="text-xs font-semibold tracking-wider text-[#0F5A47] uppercase px-3 py-1 bg-[#0F5A47]/10 rounded-full border border-[#0F5A47]/20">
+              {item.phase}
+            </span>
+          </div>
+
+          <!-- Headline -->
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#0F5A47] transition-colors leading-snug pt-1">
+            {item.headline}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-sm sm:text-[15px] text-gray-600 leading-relaxed font-normal">
+            {item.description}
+          </p>
+
+          <!-- Unique Stage Outcome -->
+          <div class="pt-2 flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0F5A47] group-hover:text-[#16A34A] transition-colors">
+            <span class="w-2 h-2 rounded-full bg-[#16A34A]"></span>
+            <span>Outcome: {item.outcome}</span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Reassurance Action Banner -->
+    <div class="mt-20 pt-10 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div class="space-y-1">
+        <h3 class="text-lg sm:text-xl font-bold text-gray-900">Ready to Deploy This Growth Framework?</h3>
+        <p class="text-sm sm:text-base text-gray-600 font-normal">We construct and manage your entire 6-step digital growth pipeline.</p>
+      </div>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-7 py-3.5 rounded-xl bg-[#0F5A47] text-white text-sm sm:text-base font-semibold hover:bg-[#0A3E31] transition-all shadow-md shrink-0"
+      >
+        <span>Build Your Growth System</span>
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

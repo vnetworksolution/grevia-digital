@@ -1,0 +1,194 @@
+/* Grevia Digital Global Design System */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts: Haffer & Haffer XH (Reference: zelh.com typography) */
+@font-face {
+  font-family: 'Haffer';
+  src: url('/fonts/Haffer-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer';
+  src: url('/fonts/Haffer-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer';
+  src: url('/fonts/Haffer-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer';
+  src: url('/fonts/HafferXH-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer XH';
+  src: url('/fonts/HafferXH-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer XH';
+  src: url('/fonts/HafferXH-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer XH';
+  src: url('/fonts/HafferXH-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --color-primary: #0F5A47;
+    --color-primary-dark: #0A3E31;
+    --color-primary-light: #16A34A;
+    --color-bg-white: #FFFFFF;
+    --color-bg-cream: #FAF9F5;
+    --color-bg-subtle: #F3F1EA;
+    --color-text-dark: #1E293B;
+    --color-text-muted: #64748B;
+    --color-accent-orange: #F97316;
+    --color-accent-yellow: #EAB308;
+    --color-border: #E2E8F0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Haffer', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'liga' off, 'calt' off;
+    font-size: 16px;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-white);
+  }
+
+  body {
+    font-family: 'Haffer', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: 'liga' off, 'calt' off;
+    font-size: 1rem;
+    line-height: 1.65;
+    letter-spacing: 0.005em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Haffer XH', 'Haffer', system-ui, sans-serif;
+    font-feature-settings: 'liga' off, 'calt' off;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+
+  p {
+    line-height: 1.7;
+    letter-spacing: 0.005em;
+  }
+
+  /* Prevent browser faux-bold bloat/smearing on Haffer */
+  .font-extrabold, .font-black {
+    font-weight: 700 !important;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Smooth Focus States for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+/* Zelh-inspired 1440px container layout structure */
+.container-1440 {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-1440 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-1440 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container-1440 {
+    padding-left: 4.375rem; /* 70px container margin */
+    padding-right: 4.375rem;
+  }
+}
+
+/* Hero Image Animated Border & Glow Effects */
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}

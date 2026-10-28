@@ -1,0 +1,170 @@
+---
+const coreServices = [
+  {
+    id: "website-design",
+    title: "Website Design",
+    tagline: "Fast, AI-Assisted & High-Converting Websites",
+    overview: "We create modern, fast-loading, SEO-friendly business websites engineered with AI tools to build trust and convert visitors into active customer enquiries.",
+    badge: "AI Web Design",
+    offerings: [
+      "WordPress + Elementor Website Design",
+      "Fast AI Assisted Website Design",
+      "High-Converting Landing Pages",
+      "Responsive Mobile Friendly",
+      "SEO-Friendly Website Design",
+      "Secure & Fast Loading Web App",
+      "Website Redesign & Maintenance",
+      "Domain & Hosting Server"
+    ],
+    ctaText: "Get Web Design Quote"
+  },
+  {
+    id: "seo-services",
+    title: "SEO Services",
+    tagline: "Organic Visibility & AI Search Engine Rankings",
+    overview: "People are searching for your services right now. We optimize your website, content, and Google profile using modern AEO & GEO AI search optimization.",
+    badge: "AI Search Visibility",
+    offerings: [
+      "Complete SEO Website Audit",
+      "On-Page SEO & Technical SEO",
+      "Off-Page SEO & Authority Link Building",
+      "Keyword Research & Competitor Analysis",
+      "Content & Image Optimization",
+      "Local SEO & Google Map Pack",
+      "Google Business Profile Optimisation",
+      "AEO, GEO & AI-Assisted SEO Search"
+    ],
+    ctaText: "Get SEO Consultation"
+  },
+  {
+    id: "digital-marketing",
+    title: "Digital Marketing",
+    tagline: "AI-Driven Paid Campaigns & Lead Funnels",
+    overview: "Reach your ideal customers with targeted ad campaigns, active social media marketing, and automated lead generation funnels.",
+    badge: "AI Lead Generation",
+    offerings: [
+      "Social Media Marketing",
+      "Facebook Meta Ads Management",
+      "Google PPC Ads Management",
+      "YouTube Video Ads Campaigns",
+      "Lead Generation & Acquisition",
+      "WhatsApp & SMS Business Marketing",
+      "Email Marketing Automation",
+      "Brand Awareness & Promotion"
+    ],
+    ctaText: "Start Ad Campaign"
+  }
+];
+---
+
+<section id="services" class="py-24 bg-gradient-to-br from-gray-900 via-[#0A3E31] to-[#0F5A47] text-white relative overflow-hidden">
+  
+  <!-- Subtle Emerald Grid Overlay -->
+  <div class="absolute inset-0 bg-[radial-gradient(#16A34A_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+
+  <!-- Ambient Glowing Theme Orbs -->
+  <div class="absolute top-1/4 right-0 w-[30rem] h-[30rem] bg-[#16A34A]/20 rounded-full blur-[100px] pointer-events-none animate-pulse"></div>
+  <div class="absolute bottom-1/4 left-0 w-[30rem] h-[30rem] bg-[#EAB308]/15 rounded-full blur-[100px] pointer-events-none animate-pulse"></div>
+
+  <div class="container-1440 relative z-10 space-y-16">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-semibold uppercase tracking-wider border border-emerald-500/30 shadow-[0_0_15px_rgba(22,163,74,0.15)]">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+        </span>
+        <span>Our 3 Core AI-Powered Pillars</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+        Services Engineered with <span class="text-[#EAB308]">AI Technology</span>
+      </h2>
+
+      <p class="text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+        Grevia Digital combines strategic expertise with modern AI technology to build high-performance websites, dominate organic search, and manage high-converting ad campaigns.
+      </p>
+    </div>
+
+    <!-- Core Service Cards Grid (3 Columns Layout) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {coreServices.map((service, index) => (
+        <div class="relative bg-white/10 backdrop-blur-xl rounded-3xl p-7 sm:p-8 border border-white/15 hover:border-[#EAB308] transition-all duration-500 flex flex-col justify-between group shadow-2xl overflow-hidden">
+          
+          <!-- Subtle Emerald Corner Glow Accent -->
+          <div class="absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br from-[#16A34A]/20 to-[#EAB308]/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
+
+          <div class="space-y-5 relative z-10">
+            
+            <!-- Number Node & AI Badge -->
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-2xl bg-[#EAB308] text-gray-900 font-bold text-base flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                0{index + 1}
+              </div>
+
+              <!-- AI Technology Badge -->
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-medium uppercase tracking-wide rounded-full shadow-sm">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                </span>
+                <span>{service.badge}</span>
+              </span>
+            </div>
+
+            <!-- Title & Tagline -->
+            <div class="space-y-1.5">
+              <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-[#EAB308] transition-colors tracking-tight">
+                {service.title}
+              </h3>
+              <p class="text-sm font-medium text-emerald-300 flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <span>{service.tagline}</span>
+              </p>
+            </div>
+
+            <!-- Overview -->
+            <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-normal">
+              {service.overview}
+            </p>
+
+            <!-- Service Scope Checklist -->
+            <div class="pt-4 border-t border-white/10 space-y-3">
+              <p class="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider">Service Scope:</p>
+
+              <ul class="space-y-2.5">
+                {service.offerings.map((item) => (
+                  <li class="flex items-center text-sm font-normal text-gray-200 group/item">
+                    <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center font-bold text-xs mr-2.5 shrink-0 group-hover/item:bg-[#EAB308] group-hover/item:text-gray-900 transition-colors">
+                      ✓
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Action CTA Button -->
+          <div class="pt-6 mt-6 border-t border-white/10 relative z-10">
+            <a
+              href="/contact"
+              class="w-full inline-flex items-center justify-center px-5 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-gray-900 bg-[#EAB308] hover:bg-yellow-400 transition-all shadow-lg hover:shadow-yellow-500/20 text-center group/btn"
+            >
+              <span>{service.ctaText}</span>
+              <svg class="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

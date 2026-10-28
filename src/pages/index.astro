@@ -1,0 +1,66 @@
+---
+// Updated 3-block Services and Testimonials Carousel
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/home/HeroSection.astro';
+import ServicesMarqueeRibbon from '../components/home/ServicesMarqueeRibbon.astro';
+import ProblemSection from '../components/home/ProblemSection.astro';
+import AwarenessSection from '../components/home/AwarenessSection.astro';
+import ServicesMatrix from '../components/home/ServicesMatrix.astro';
+import WhyChooseUs from '../components/home/WhyChooseUs.astro';
+import IndustriesSection from '../components/home/IndustriesSection.astro';
+import ProcessSection from '../components/home/ProcessSection.astro';
+import QuoteCtaSection from '../components/home/QuoteCtaSection.astro';
+import FaqSection from '../components/home/FaqSection.astro';
+import TestimonialsSection from '../components/home/TestimonialsSection.astro';
+import BlogFeedSection from '../components/home/BlogFeedSection.astro';
+import { seoData, getFAQSchema } from '../data/seo';
+import { faqsData } from '../data/faqs';
+
+const faqSchema = getFAQSchema(faqsData);
+---
+
+<BaseLayout
+  title={seoData.home.title}
+  description={seoData.home.description}
+  canonical={seoData.home.canonical}
+  keywords={seoData.home.keywords}
+  activePage="home"
+  schemaJson={faqSchema}
+>
+  <!-- 01. Powerful Story-Driven Hero Section -->
+  <HeroSection />
+
+  <!-- Smooth Moving Services Ribbon (Dark Theme) -->
+  <ServicesMarqueeRibbon />
+
+  <!-- 02. The Problem Business Owners Face -->
+  <ProblemSection />
+
+  <!-- 03. Digital Growth Framework (Awareness Journey) -->
+  <AwarenessSection />
+
+  <!-- 04. Core Services Matrix (Web Design, SEO, Digital Marketing) -->
+  <ServicesMatrix />
+
+  <!-- 05. Why Choose Grevia Digital (8+ Yrs, 100+ Projects) -->
+  <WhyChooseUs />
+
+  <!-- 06. Sectors & Industries We Serve -->
+  <IndustriesSection />
+
+  <!-- 07. Simple 5-Step Process -->
+  <ProcessSection />
+
+  <!-- 08. Frequently Asked Questions & Growth Banner (8 Expandable FAQs + Integrated Banner) -->
+  <FaqSection />
+
+  <!-- 09. Client Testimonials (12 Verified Real Client Reviews Carousel) -->
+  <TestimonialsSection />
+
+  <!-- 10. WordPress REST API Latest Blog Feed (Rich Metadata Cards) -->
+  <BlogFeedSection />
+
+  <!-- 11. Conversion Call to Action Banner (Ready For Growth? Above Footer) -->
+  <QuoteCtaSection />
+
+</BaseLayout>

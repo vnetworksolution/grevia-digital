@@ -1,0 +1,197 @@
+---
+import siteConfig from '../../data/site.json';
+
+interface WPPost {
+  id: number;
+  title: { rendered: string };
+  excerpt: { rendered: string };
+  date: string;
+  link: string;
+  category?: string;
+  author?: string;
+  readTime?: string;
+  tags?: string[];
+  image?: string;
+  _embedded?: {
+    'wp:featuredmedia'?: Array<{ source_url?: string }>;
+  };
+}
+
+let posts: WPPost[] = [];
+let fetchSuccess = false;
+
+try {
+  const apiUrl = siteConfig.blog.apiUrl;
+  if (apiUrl && !apiUrl.includes('[WORDPRESS')) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
+    const res = await fetch(apiUrl, { signal: controller.signal });
+    clearTimeout(timeoutId);
+
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        posts = data.slice(0, 3);
+        fetchSuccess = true;
+      }
+    }
+  }
+} catch (e) {
+  fetchSuccess = false;
+}
+
+const fallbackPosts = [
+  {
+    id: 1,
+    title: "Why High Loading Speed is Critical for Business Website Conversions",
+    excerpt: "Learn how page load times impact Core Web Vitals, Google search rankings, and user bounce rates for modern business websites in Siliguri and beyond.",
+    date: "Aug 15, 2026",
+    link: siteConfig.blog.url,
+    category: "Website Design",
+    author: "Grevia Tech Team",
+    readTime: "5 min read",
+    tags: ["PageSpeed", "Core Web Vitals", "UX Design"],
+    imageGradient: "from-[#0F5A47] via-gray-900 to-[#0A3E31]"
+  },
+  {
+    id: 2,
+    title: "Complete Guide to Local SEO for Siliguri Businesses",
+    excerpt: "Discover step-by-step strategies to optimize your Google Business Profile, capture local map packs, and outrank regional competitors.",
+    date: "Aug 10, 2026",
+    link: siteConfig.blog.url,
+    category: "Local SEO",
+    author: "SEO Strategy Team",
+    readTime: "7 min read",
+    tags: ["Google Maps", "Local Search", "GBP Rank"],
+    imageGradient: "from-emerald-950 via-gray-900 to-[#0F5A47]"
+  },
+  {
+    id: 3,
+    title: "How to Structure Meta & Google Ads Campaigns for Lead Generation",
+    excerpt: "Stop wasting ad spend. Understand how targeted audience segmentation, custom landing page funnels, and conversion tracking maximize ROI.",
+    date: "Aug 01, 2026",
+    link: siteConfig.blog.url,
+    category: "Digital Ads",
+    author: "Growth Marketing",
+    readTime: "6 min read",
+    tags: ["PPC Ads", "Meta Lead Ads", "ROI Funnels"],
+    imageGradient: "from-gray-900 via-[#0A3E31] to-emerald-900"
+  }
+];
+
+const displayPosts = fetchSuccess ? posts.map((p, idx) => ({
+  id: p.id,
+  title: p.title.rendered,
+  excerpt: p.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 160) + '...',
+  date: new Date(p.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+  link: p.link,
+  category: idx === 0 ? "Website Design" : idx === 1 ? "Local SEO" : "Digital Ads",
+  author: "Grevia Team",
+  readTime: "5 min read",
+  tags: idx === 0 ? ["Web Speed", "UX"] : idx === 1 ? ["Local Maps", "SEO"] : ["Google Ads", "Meta"],
+  imageGradient: idx === 0 ? "from-[#0F5A47] via-gray-900 to-[#0A3E31]" : idx === 1 ? "from-emerald-950 via-gray-900 to-[#0F5A47]" : "from-gray-900 via-[#0A3E31] to-emerald-900"
+})) : fallbackPosts;
+---
+
+<section class="py-24 bg-white border-t border-gray-100">
+  <div class="container-1440">
+    
+    <!-- Large Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div class="space-y-3 max-w-3xl">
+        <div class="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#0F5A47]/10 text-[#0F5A47] text-xs sm:text-sm font-semibold tracking-wide border border-[#0F5A47]/20">
+          <span>Insights & Knowledge Base</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
+          Latest From Our <span class="text-[#0F5A47]">Blog</span>
+        </h2>
+        <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
+          Explore practical digital marketing strategies, website optimization guides, and search engine growth articles written by our agency team.
+        </p>
+      </div>
+
+      <a
+        href={siteConfig.blog.url}
+        class="inline-flex items-center px-6 py-3.5 rounded-xl bg-[#0F5A47] text-white text-sm sm:text-base font-semibold hover:bg-[#0A3E31] transition-all shadow-md hover:shadow-lg shrink-0"
+      >
+        <span>Explore All Articles</span>
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Large Rich Article Cards Grid (3 Columns with Top Spacing) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 pt-4 sm:pt-6">
+      {displayPosts.map((post) => (
+        <div class="bg-[#F9FAF6] rounded-3xl border border-gray-200/90 overflow-hidden hover:shadow-2xl hover:border-[#0F5A47] transition-all duration-300 group flex flex-col justify-between">
+          
+          <div>
+            <!-- Large Image Thumbnail Container (h-56) -->
+            <div class={`h-56 bg-gradient-to-br ${post.imageGradient} p-6 flex flex-col justify-between text-white relative overflow-hidden group-hover:brightness-110 transition-all`}>
+              
+              <!-- Background Ambient Accent -->
+              <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-[#EAB308]/20 rounded-full blur-2xl pointer-events-none"></div>
+
+              <!-- Top Row: Category Badge + Read Time -->
+              <div class="flex items-center justify-between relative z-10">
+                <span class="text-xs font-bold uppercase tracking-wider text-gray-900 px-3.5 py-1 bg-[#EAB308] rounded-full shadow-sm">
+                  {post.category}
+                </span>
+                <span class="text-xs font-medium text-gray-200 bg-black/40 backdrop-blur-xs px-2.5 py-1 rounded-md">
+                  {post.readTime}
+                </span>
+              </div>
+
+              <!-- Bottom Row: Date & Author Tag -->
+              <div class="relative z-10 flex items-center justify-between text-xs text-gray-300 border-t border-white/10 pt-3">
+                <span class="font-mono font-normal">{post.date}</span>
+                <span class="font-medium text-emerald-300">{post.author}</span>
+              </div>
+
+            </div>
+
+            <!-- Content Container -->
+            <div class="p-8 space-y-4">
+              
+              <!-- Topic Tags List -->
+              <div class="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span class="text-xs font-medium text-[#0F5A47] bg-[#0F5A47]/10 px-3 py-1 rounded-full">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+
+              <!-- Heading -->
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#0F5A47] transition-colors leading-snug">
+                {post.title}
+              </h3>
+
+              <!-- Excerpt -->
+              <p class="text-sm sm:text-[15px] text-gray-600 leading-relaxed font-normal">
+                {post.excerpt}
+              </p>
+
+            </div>
+          </div>
+
+          <!-- Bottom Action Row -->
+          <div class="px-8 pb-8 pt-2">
+            <a
+              href={post.link}
+              class="w-full inline-flex items-center justify-center px-5 py-3 rounded-xl font-semibold text-sm sm:text-base text-[#0F5A47] bg-[#0F5A47]/10 hover:bg-[#0F5A47] hover:text-white transition-all text-center"
+            >
+              <span>Read Full Article</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

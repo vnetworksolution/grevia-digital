@@ -1,0 +1,58 @@
+---
+import siteConfig from '../data/site.json';
+
+const whatsappNum = siteConfig.contact.whatsapp.replace(/[^0-9]/g, '');
+const whatsappUrl = `https://wa.me/${whatsappNum}?text=Hello%20Grevia%20Digital,%20I%20would%20like%20to%20enquire%20about%20your%20services.`;
+---
+
+<div class="fixed bottom-6 right-6 z-50 flex items-center justify-center">
+  <!-- Fresh Animated Ripple Ring -->
+  <span class="absolute inline-flex w-full h-full rounded-full bg-[#25D366]/40 fresh-wa-ripple"></span>
+  
+  <!-- Fresh Floating WhatsApp Action Button -->
+  <a
+    href={whatsappUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="relative inline-flex items-center justify-center gap-2.5 w-14 h-14 sm:w-auto sm:h-auto sm:px-5 sm:py-3.5 rounded-full bg-[#25D366] text-white font-bold shadow-xl hover:bg-[#20ba5a] hover:shadow-2xl active:scale-95 transition-all duration-300 group focus:outline-none ring-4 ring-[#25D366]/20 fresh-wa-button"
+    aria-label="Click to Chat on WhatsApp"
+  >
+    <!-- Vector WhatsApp Icon -->
+    <div class="w-6 h-6 flex items-center justify-center shrink-0">
+      <svg class="w-6 h-6 fill-current group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.554 4.108 1.523 5.833L0 24l6.326-1.493C8.007 23.465 9.945 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.845 0-3.568-.485-5.06-1.332l-.363-.205-3.757.887.901-3.649-.228-.37A9.957 9.957 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/>
+      </svg>
+    </div>
+    <span class="text-sm tracking-wide font-bold hidden sm:inline">Click to Chat</span>
+  </a>
+</div>
+
+<style>
+  .fresh-wa-button {
+    animation: freshPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .fresh-wa-ripple {
+    animation: freshRipple 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+
+  @keyframes freshPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes freshRipple {
+    0% {
+      transform: scale(1);
+      opacity: 0.75;
+    }
+    100% {
+      transform: scale(1.45);
+      opacity: 0;
+    }
+  }
+</style>

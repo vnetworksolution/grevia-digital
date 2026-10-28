@@ -1,0 +1,110 @@
+[
+  {
+    "id": "review-1",
+    "clientName": "Mr. Neeldavid Katwal",
+    "businessName": "Luxury Salon",
+    "designation": "Client",
+    "reviewText": "Grevia Digital did an excellent job with our luxury salon branding & Marketing. They understood our brand properly and created a professional online presence for us. Their team was responsive and easy to work with. I would definitely recommend them for branding and digital marketing services in Siliguri.",
+    "rating": 5,
+    "tag": "Branding & Digital Marketing"
+  },
+  {
+    "id": "review-2",
+    "clientName": "Mr. Tulsi Pradhan",
+    "businessName": "Tours & Travels",
+    "designation": "Client",
+    "reviewText": "We worked with Grevia Digital for our tours and travel website and Local SEO services. The website looks professional and is easy for our customers to use. Their SEO work has also helped improve our local online visibility. A reliable team for anyone looking for SEO Services in Siliguri.",
+    "rating": 5,
+    "tag": "Website Design & Local SEO"
+  },
+  {
+    "id": "review-3",
+    "clientName": "Mr. Eden Subba",
+    "businessName": "Homestay Services",
+    "designation": "Client",
+    "reviewText": "Grevia Digital created our homestay website in a very professional way. They understood what we wanted to show to our guests and presented our rooms and services properly. Their lead generation support has also helped us connect with more potential customers. Good experience overall.",
+    "rating": 5,
+    "tag": "Website Design & Lead Generation"
+  },
+  {
+    "id": "review-4",
+    "clientName": "Mr. Anwesh Bhaduri",
+    "businessName": "Corporate Client",
+    "designation": "Client",
+    "reviewText": "We approached Grevia Digital for our company website design and were happy with the overall experience. The team understood our requirements and created a clean and professional website. Communication was smooth throughout the project. I would recommend them for professional website design company in Siliguri.",
+    "rating": 5,
+    "tag": "Website Design & Logo Design"
+  },
+  {
+    "id": "review-5",
+    "clientName": "Mr. MD Salman",
+    "businessName": "Car Rental Services",
+    "designation": "Client",
+    "reviewText": "Grevia Digital designed our car rental website and also managed our Google Ads services. The website is easy to navigate and presents our rental services clearly. Their digital marketing team also helped us reach potential customers through online advertising. Good option for businesses looking for digital marketing company in Siliguri.",
+    "rating": 5,
+    "tag": "Website Design & Google Ads"
+  },
+  {
+    "id": "review-6",
+    "clientName": "Mr. Debashis Das",
+    "businessName": "Business Owner",
+    "designation": "Client",
+    "reviewText": "I was looking for a professional team for my business website and found Grevia Digital. They understood my requirements and delivered a clean, mobile-friendly website. The team was supportive during the whole process and made the changes whenever required. Best website designing company in Siliguri.",
+    "rating": 5,
+    "tag": "Website Design"
+  },
+  {
+    "id": "review-7",
+    "clientName": "Mrs. Geeta Rai",
+    "businessName": "Local Business",
+    "designation": "Client",
+    "reviewText": "Our experience with Grevia Digital was smooth and professional. They helped us improve our online presence through digital marketing and gave useful suggestions for growing our business online. If you are searching for digital marketing company in Siliguri, they are worth considering.",
+    "rating": 5,
+    "tag": "Facebook Ads & Digital Marketing"
+  },
+  {
+    "id": "review-8",
+    "clientName": "Mr. Rahul Sharma",
+    "businessName": "Local Enterprise",
+    "designation": "Client",
+    "reviewText": "Grevia Digital helped us with our SEO requirements and explained the process in a simple way. We appreciated their regular communication and focus on improving our online visibility. Their team is professional and easy to communicate with. Best SEO services in Siliguri.",
+    "rating": 5,
+    "tag": "SEO & GMB Optimization"
+  },
+  {
+    "id": "review-9",
+    "clientName": "Mr. Tubai Saha",
+    "businessName": "Modern Business",
+    "designation": "Client",
+    "reviewText": "We needed a modern website for our business and Grevia Digital helped us turn our ideas into a professional website. The design is clean, responsive and easy to use. Their team was cooperative and understood our requirements well. Best website design company in siliguri",
+    "rating": 5,
+    "tag": "Website Design"
+  },
+  {
+    "id": "review-10",
+    "clientName": "Mr. Sunny Thapa",
+    "businessName": "Regional Business",
+    "designation": "Client",
+    "reviewText": "Grevia Digital provided us with a complete digital marketing solution for our business. From planning to execution, their team was helpful and responsive. We were looking for a digital agency in Siliguri that could understand our business needs, and the overall experience has been positive.",
+    "rating": 5,
+    "tag": "Digital Marketing"
+  },
+  {
+    "id": "review-11",
+    "clientName": "Mr. Kunal Gupta",
+    "businessName": "Siliguri Business",
+    "designation": "Client",
+    "reviewText": "We contacted Grevia Digital for SEO Services in Siliguri and found their team professional and knowledgeable. They worked on improving our website visibility and gave us useful recommendations. Communication was clear and they kept us updated about the work.",
+    "rating": 5,
+    "tag": "SEO Services"
+  },
+  {
+    "id": "review-12",
+    "clientName": "Mrs. Priyanka Thapa",
+    "businessName": "Local Business",
+    "designation": "Client",
+    "reviewText": "Grevia Digital gave our business a much better online presence with their website design and digital marketing support. The team was friendly, responsive and understood our requirements. Overall, it was a good experience working with a local digital agency in Siliguri.",
+    "rating": 5,
+    "tag": "Website Design & Digital Marketing"
+  }
+]

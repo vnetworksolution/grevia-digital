@@ -1,0 +1,102 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import ProjectEnquiryModal from '../components/ProjectEnquiryModal.astro';
+import { getOrganizationSchema } from '../data/seo';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  keywords?: string[];
+  activePage?: string;
+  schemaJson?: object | object[];
+}
+
+const {
+  title,
+  description,
+  canonical = 'https://greviadigital.com/',
+  keywords = [],
+  activePage = 'home',
+  schemaJson
+} = Astro.props;
+
+const defaultSchema = getOrganizationSchema();
+const finalSchema = schemaJson 
+  ? (Array.isArray(schemaJson) ? [defaultSchema, ...schemaJson] : [defaultSchema, schemaJson])
+  : [defaultSchema];
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+    <link rel="canonical" href={canonical} />
+
+    <!-- Search Engine Crawling & Indexing Directives -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Grevia Digital" />
+    <meta name="publisher" content="Grevia Digital" />
+    <meta name="theme-color" content="#071F19" />
+
+    <!-- Local SEO Geo Meta Tags -->
+    <meta name="geo.region" content="IN-WB" />
+    <meta name="geo.placename" content="Siliguri" />
+    <meta name="geo.position" content="26.7271;88.3953" />
+    <meta name="ICBM" content="26.7271, 88.3953" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Grevia Digital" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://greviadigital.com/images/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://greviadigital.com/images/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Grevia Digital - SEO, Web Design & Digital Marketing Agency in Siliguri" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@greviadigital" />
+    <meta name="twitter:creator" content="@greviadigital" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://greviadigital.com/images/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Grevia Digital - SEO, Web Design & Digital Marketing Agency in Siliguri" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preload Haffer & Haffer XH Brand Fonts -->
+    <link rel="preload" href="/fonts/Haffer-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Haffer-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/HafferXH-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/HafferXH-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Schema.org JSON-LD (Structured Data) -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(finalSchema)} />
+  </head>
+
+  <body class="flex flex-col min-h-full bg-white text-gray-900 antialiased selection:bg-[#0F5A47] selection:text-white">
+    <Header activePage={activePage} />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+    <ProjectEnquiryModal activePage={activePage} />
+  </body>
+</html>
